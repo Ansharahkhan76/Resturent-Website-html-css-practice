@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+    <title>Resturent web</title>
+    <style>
+        /* Basic CSS styling for the navbar */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            background-color: inherit;
+            margin: 0;
+            padding: 14px 16px;
+            cursor: pointer;
+        }
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: #ddd;
+            color: black;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+
+
+
+
+        * {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+
+
+.navbar .logo {
+            display: block;
+            float: left;
+            margin-right: 20px;
+         
+        }
+
+
+
+
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            max-width: 100%;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                max-width: 100%;
+            }
+        }
+
+
+
+        
+        .footer {
+            background-color: #222;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .footer p {
+            margin: 0;
+            padding-top: 10px;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding: 20px 0;
+            }
+
+            .footer-logo {
+                font-size: 20px;
+            }
+        }
+
+
+
+
+
+
+        
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        video {
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body bgcolor="#f1f1f1">
+
+<div class="navbar">
+  <a href="logo 2.jpg" class="logo"><img src="logo 2.jpg" alt="Logo" height="25"></a>
+    <a href="home.html">Home</a>
+    <a href="About.html">About</a>
+    <a href="Gallery.html">Gallery</a>
+    <div class="dropdown">
+        <button class="dropbtn">Category
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="drp down desi foood.html">Desi Food</a>
+            <a href="drp down junk food.html">Junk Food</a>
+            <a href="drp down bbq page.html">BBQ</a>
+            <a href="drp down sweets.html">Sweets</a>
+            <a href="drp down 4 drinks .html">Drinks</a>
+        </div>
+    </div>
+    <a href="Contact.html">Contact</a>
+    <a href="Contact.html">Feedback</a>
+
+</div>
+<br>
+<br>
+
+<br>
+<br>
+<!-- Content goes here -->
+
+
+
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="table pic.jpeg" style="width:100%" height="550">
+      <div class="text">My Resturent</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="front resturent piz.jpeg" style="width:100%" height="550" >
+      <div class="text">Main Menu</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="friends home pic.jpeg" style="width:100%" height="550">
+      <div class="text">Special Karahi</div>
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+    
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+    
+    <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<div class="card-container">
+  <div class="card" >
+      <img src="card home 4.jpeg" alt="Card Image 1" >
+      <div class="card-content">
+          <h2>Card Title 1</h2>
+          <p>This is a sample card description.</p>
+          <a href="#">Read More</a>
+      </div>
+  </div>
+
+  <div class="card">
+      <img src="card home 2.webp" alt="Card Image 2">
+      <div class="card-content">
+          <h2>Card Title 2</h2>
+          <p>This is another card description.</p>
+          <a href="#">Read More</a>
+      </div>
+  </div>
+
+  <div class="card">
+      <img src="card home 4.jpeg"  alt="Card Image 3">
+      <div class="card-content">
+          <h2>Card Title 3</h2>
+          <p>Yet another card description.</p>
+          <a href="#">Read More</a>
+      </div>
+  </div>
+
+  <div class="card">
+    <img src="card home 2.webp" style="height: 300;" alt="Card Image 4">
+    <div class="card-content">
+        <h2>Card Title 4</h2>
+        <p>Yet another card description.</p>
+        <a href="#">Read More</a>
+    </div>
+</div>
+<div class="card">
+  <img src="card home 2.webp" style="height: 300;" alt="Card Image 5">
+  <div class="card-content">
+      <h2>Card Title 5</h2>
+      <p>Yet another card description.</p>
+      <a href="#">Read More</a>
+  </div>
+</div>
+<div class="card">
+  <img src="card home 4.jpeg" style="height: 300;" alt="Card Image 6">
+  <div class="card-content">
+      <h2>Card Title 6</h2>
+      <p>Yet another card description.</p>
+      <a href="#">Read More</a>
+  </div>
+</div>
+<div class="card">
+  <img src="card home 2.webp" style="height: 300;" alt="Card Image 7">
+  <div class="card-content">
+      <h2>Card Title 7</h2>
+      <p>Yet another card description.</p>
+      <a href="#">Read More</a>
+  </div>
+</div>
+<div class="card">
+  <img src="card home 4.jpeg" style="height: 300;" alt="Card Image 8">
+  <div class="card-content">
+      <h2>Card Title 8</h2>
+      <p>Yet another card description.</p>
+      <a href="#">Read More</a>
+  </div>
+</div>
+
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<center>
+<div class="bg-light p-5 text-center">
+  <h2>My First Bootstrap Page</h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem aliquid, totam nesciunt delectus illum moles
+    tias, aut officiis quas adipisci praesentium tempora ducimus fugit debitis cumque est natus excepturi porr
+    o a eius beatae odit error veniam vero hic! Eligendi est sapiente nihil, nemo autem facilis illum natus, 
+    incidunt in eos deserunt quaerat! Ipsam quia incidunt ipsa aperiam molestiae? Impedit iste fugit, autem 
+    commodi debitis recusandae? Beatae rem ad pariatur doloribus dignissimos quasi delectus mollitia, eligendi
+    , neque provident eius consequatur ea esse itaque? Impedit repellat dicta similique ipsam itaque sed
+     nostrum et pariatur ducimus provident assumenda at optio debitis, possimus minus reiciendis!</p>
+  <button class="btn btn-primary">Primary</button>
+  <button class="btn btn-success">Success</button>
+</div>
+
+</center>
+
+
+<div class="video-container">
+  <video controls>
+      <source src="sea_-_24216 (540p).mp4" type="video/mp4">
+      Your browser does not support the video tag.
+  </video>
+</div>
+
+
+<br>
+<br>
+<br>
+
+<footer class="footer">
+  <div class="footer-logo">Restaurant Name</div>
+  <p>123 Main Street, City</p>
+  <p>Phone: (123) 456-7890</p>
+  <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+  <p>&copy; 2023 Restaurant Name. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
